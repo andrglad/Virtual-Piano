@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <title>Virtual Piano</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<script>
+  function makeSoundByName (name) {
+    const audioObject = new Audio(`./notes/${name}.mp3`)
+    audioObject.play()
+  }
+
+  document.addEventListener('keydown', function (e) {
+    makeSoundByName(e.key.toUpperCase())
+  })
+
+  // document.addEventListener('keydown', function (e) {
+  //     console.log("The '" + e.key.toUpperCase() + "' key is pressed.")
+  // })
+</script>
+<div class="container">
+    <div class="white-keys">
+        <kbd>A</kbd>
+        <kbd>S</kbd>
+        <kbd>D</kbd>
+        <kbd>F</kbd>
+        <kbd>G</kbd>
+        <kbd>H</kbd>
+        <kbd>J</kbd>
+    </div>
+    <div class="black-keys">
+        <kbd>W</kbd>
+        <kbd>E</kbd>
+        <kbd  id="trans">T</kbd>
+        <kbd>T</kbd>
+        <kbd>Y</kbd>
+        <kbd>U</kbd>
+    </div>
+</div>
+</body>
+</html>
